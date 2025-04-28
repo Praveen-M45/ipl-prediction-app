@@ -19,9 +19,7 @@ if 'prev_team2' not in st.session_state:
 @st.cache_data
 def load_data():
     try:
-        url = "https://raw.githubusercontent.com/srinathkr07/IPL-Data-Analysis/master/matches.csv"
-        df = pd.read_csv(url)
-        # Normalize column names: lowercase and strip whitespace
+        df = pd.read_csv("matches.csv")  
         df.columns = df.columns.str.lower().str.strip()
         return df
     except Exception as e:
